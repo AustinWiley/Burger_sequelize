@@ -6,6 +6,7 @@ var burger = {
   all: function(cb) {
     orm.selectAll("burgers", function(res) {
       cb(res);
+      console.log("alll--------------")
     });
   },
   // The variables cols and vals are arrays.
