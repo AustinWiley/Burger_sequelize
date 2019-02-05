@@ -1,8 +1,10 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
-      var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
+    console.log('front end js')
+    $(".eat_burger").on("click", function(event) {
+    //   var id = $(this).data("id");
+      var id = $(this).data().val();
+      console.log(id)
   
       var newSleepState = {
         sleepy: newSleep
@@ -58,6 +60,4 @@ $(function() {
       );
     });
   });
-
-  console.log('client')
   
