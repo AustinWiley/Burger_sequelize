@@ -10,12 +10,12 @@ var burger = {
     });
   },
   // The variables cols and vals are arrays.
-  create: function(burgerName) {
+  create: function(burgerName, cb) {
     orm.insertOne("burgers", burgerName, function(res) {
       cb(res);
     });
   },
-  update: function(burgerName) {
+  update: function(burgerName, cb) {
     orm.updateOne("burgers", burgerName, function(res) {
       cb(res);
     });
