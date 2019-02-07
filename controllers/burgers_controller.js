@@ -21,6 +21,7 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
     console.log('post')
+    console.log(req.body);
     console.log(req.body.name);
   burger.create(req.body.name,  function(result) {
       console.log('create controller')
@@ -32,10 +33,11 @@ router.post("/", function(req, res) {
   });
 });
 
-router.put("/", function(req, res) {
+router.put("/burger/:burger", function(req, res) {
     console.log('put')
-    console.log(req.body.name);
-  burger.update(req.body.name, function(result) {
+    console.log(req.body.devoured)
+    // console.log(req.body.name);
+  burger.update(req.body.devoured, function(result) {
     // if (result.changedRows == 0) {
     //   // If no rows were changed, then the ID must not exist, so 404
     //   return res.status(404).end();

@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		{{!-- <link rel="stylesheet" href="/public/assets/css/burger_style.css" type="text/css" /> --}}
-		<title>MVC With Burgers!</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		{{!-- <script type="text/javascript" src="/public/assets/js/burgerclient.js"></script> --}}
-	</head>
-	<body>
-		{{{ body }}}
-        	<script type="text/javascript">
-            console.log("hello")
-            // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
-    console.log('front end js')
-    $(".eat_burger").on("click", function(event) {
-    //   var id = $(this).data("id");
-    console.log("you clicked eat")
-      var id = $(this).data();
-      console.log(id)
-  
-      var newEatState = {
-        Devoured: id
-      };
-  
-      // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
-        type: "PUT",
-        data: newSleepState
-      }).then(
-        function() {
-          console.log("changed sleep to", newSleep);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  {{!-- <link rel="stylesheet" href="/public/assets/css/burger_style.css" type="text/css" /> --}}
+  <title>MVC With Burgers!</title>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  {{!-- <script type="text/javascript" src="/public/assets/js/burgerclient.js"></script> --}}
+</head>
+
+<body>
+  {{{ body }}}
+  <script type="text/javascript">
+    console.log("hello")
+    // Make sure we wait to attach our handlers until the DOM is fully loaded.
+    $(function () {
+
+      $(".eat_burger").on("click", function (event) {
+        console.log("you clicked eat")
+        var burger = $(this).text().trim();
+
+        console.log(burger)
+
+        var newEatState = {
+          devoured: burger
+        };
+        // Send the PUT request.
+        $.ajax("/burger/" + burger, {
+          type: "PUT",
+          data: newEatState
+        }).then(
+          function () {
+            console.log("changed eat state to devoured");
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+
+      $(".new_burger").on("click", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        var newBurger = {
+          name: $("#burger_name").val().trim()
+        };
+        console.log(newBurger)
+
+        // Send the POST request.
+        $.ajax("/", {
+          type: "POST",
+          data: newBurger
+        }).then(
+          function () {
+            console.log("created new burger");
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
+
+      $(".delete-cat").on("click", function (event) {
+        var id = $(this).data("id");
+
+        // Send the DELETE request.
+        $.ajax("/api/cats/" + id, {
+          type: "DELETE"
+        }).then(
+          function () {
+            console.log("deleted cat", id);
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
     });
-  
-    $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
-  
-      var newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
-      };
-  
-      // Send the POST request.
-      $.ajax("/api/cats", {
-        type: "POST",
-        data: newCat
-      }).then(
-        function() {
-          console.log("created new cat");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-  
-    $(".delete-cat").on("click", function(event) {
-      var id = $(this).data("id");
-  
-      // Send the DELETE request.
-      $.ajax("/api/cats/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted cat", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-  });
-  
-            </script>
-	</body>
+
+  </script>
+</body>
+
 </html>
