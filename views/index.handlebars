@@ -17,12 +17,20 @@
             aria-describedby="button-addon1">
     </div>
 
+
+
+
+
+
+
     <div class="row">
         <div class="col-md-6">
             <ul class="list-group border-warning">
                 <li class="list-group-item active bg-warning border-warning">Click on a Burger to eat it!</li>
                 {{#each burgers}}
+  {{#unless devoured}}
                 <li class="list-group-item eat_burger"><button type="button" class="btn btn-warning btn-sm" data-burger={{id}} value={{id}}>{{burger_name}}</button></li>
+  {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -30,7 +38,9 @@
             <ul class="list-group">
                 <li class="list-group-item active bg-danger border-danger">Devoured Burgers</li>
                 {{#each burgers}}
-                <li class="list-group-item">{{burger_name}}</li>
+  {{#if devoured}}
+                           <li class="list-group-item">{{burger_name}}</li> 
+  {{/if}}
                 {{/each}}
             </ul>
         </div>
