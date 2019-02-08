@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('burgers_db', 'root', 'root', {
+const sequelize = new Sequelize('burger_sequalize_d', 'root', 'root', {
   host: 'localhost',
   port: 8889,
   dialect: 'mysql',

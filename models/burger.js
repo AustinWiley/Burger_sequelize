@@ -2,9 +2,15 @@ const Sequelize = require('sequelize');
 const sequelize = require('../config/connection.js')
 //-----------------------------------------------
 const Burger = sequelize.define('burger', {
-  burger_name: Sequelize.STRING,
-  devoured: Sequelize.BOOLEAN,
-  createdAt: Sequelize.DATE
+  burger_name: {
+    type: Sequelize.STRING
+  },
+  devoured: {
+    type: Sequelize.BOOLEAN
+  },
+  created_at: {
+    type: Sequelize.DATE
+  }
 });
 
 Burger.sync();
