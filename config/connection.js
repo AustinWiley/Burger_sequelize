@@ -1,30 +1,27 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
-
-// Require mysql
-var mysql = require("mysql");
-var connection;
-// Set up our connection information
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
-  host: "",
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('burgers_db', 'root', 'root', {
+  host: 'localhost',
   port: 8889,
-  user: "root",
-  password: "root",
-  database: "burgers_db"
-})};
-
-// Connect to the database
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
+  dialect: 'mysql',
+  operatorsAliases: false,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
   }
-  console.log("connected as id " + connection.threadId);
 });
 
-// Export connection
-module.exports = connection;
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+// Or you can simply use a connection uri
+// const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
+
+module.exports = sequelize;
