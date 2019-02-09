@@ -7,9 +7,6 @@ const Burger = sequelize.define('burger', {
   },
   devoured: {
     type: Sequelize.BOOLEAN
-  },
-  created_at: {
-    type: Sequelize.DATE
   }
 });
 
