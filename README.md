@@ -76,8 +76,9 @@ localhost:8080
 ```
 
 
-## Screenshot
-`add gif here`
+## Demo
+![alt text](http://url/to/img.png)
+
 
 ## Built With
 
