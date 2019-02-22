@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 console.log('connection js')
+
 if (process.env.JAWSDB_URL) {
 console.log('JawsDB Bro')
   // var sequelize = new Sequelize(process.env.JAWSDB_URL);
