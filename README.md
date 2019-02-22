@@ -1,86 +1,88 @@
-# burger
-mysql and hadlebars app
 
-https://infinite-beyond-30054.herokuapp.com/
+# Burger-sequelize
+### Eat Da Burger!!!
+A Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!
 
-# burger-sequelize
+Try out the deployed app in Heroku, found [here](https://infinite-beyond-30054.herokuapp.com/)
 
-One Paragraph of project description goes here
+## Functionality
+Using the Sequelize ORM rather than raw MySQL queries, the app has 3 basic CRUD functions...
+
+* READ all entries from the MySQL database and display them to the DOM using Handlebars.
+
+* UPDATE a selected burger by clicking on the burger name button, which... * hits a /put route in Express to change its "devoured" status in the MySQL database (via Sequelize ORM) * re-routes the webpage back to the index, where the burger is now in the devoured column (via Handlebars)
+
+* CREATE a new burger using the "Add A New Burger" form, which... * hits a /post route in Express to insert a new burger into the MySQL database (via Sequelize ORM) * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
 ```
-Give examples
+* Node.js
+* NPM
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Clone the repo to your computer using the command line:
 
 ```
-Give the example
+git clone git@github.com:AustinWiley/Burger_sequelize.git
 ```
 
-And repeat
+Use MySQL Workbench or HeidiSQL to create a database called:
 
 ```
-until finished
+burger_sequalize_d
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Inside the `config` folder, open up the `connection.js` file and add your MySQL localhost password:
 
 ```
-Give an example
+  var sequelize = new Sequelize('burger_sequalize_d', 'root', '<yourPassWordHere>', {
+    host: 'localhost',
+    port: 8889,
+    dialect: 'mysql',
+    operatorsAliases: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+In your terminal, cd into the project folder and run:
 
 ```
-Give an example
+npm install
 ```
 
-## Deployment
+Start a node server by running this in your terminal:
 
-Add additional notes about how to deploy this on a live system
+```
+node server.js
+```
+
+Finally, navigating in your browser:
+
+```
+localhost:8080
+```
+
+
+## Screenshot
+`add gif here`
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* [Heroku](https://heroku.com) - Cloud platform for deployment.
+* [Express](https://www.npmjs.com/package/express) - Server framework.
+* [sequelize](http://docs.sequelizejs.com/) -  Promise-based ORM for Node.js.
+* [Express-handlebars](https://www.npmjs.com/package/express-handlebars) - A [Handlebars](https://www.npmjs.com/package/handlebars) view engine for Express. Used to generate dynamic HTML.
+* [mysql2](https://www.npmjs.com/package/mysql2) - MySQL client for Node.js.
