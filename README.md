@@ -26,7 +26,7 @@ A step by step series of examples that tell you how to get a development env run
 Clone the repo to your computer usingthe command line:
 
 ```
-git clone <repo clone url>
+`git clone git@github.com:AustinWiley/Burger_sequelize.git`
 ```
 
 Use MySQL Workbench or HeidiSQL to create a database called:
