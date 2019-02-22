@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/connection.js')
 //-----------------------------------------------
+console.log('berger models')
 const Burger = sequelize.define('burger', {
   burger_name: {
     type: Sequelize.STRING

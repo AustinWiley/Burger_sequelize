@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-
+console.log('connection js')
 if (process.env.JAWSDB_URL) {
 console.log('JawsDB Bro')
   // var sequelize = new Sequelize(process.env.JAWSDB_URL);
@@ -39,8 +39,5 @@ sequelize
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
-
-// Or you can simply use a connection uri
-// const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
 
 module.exports = sequelize;
