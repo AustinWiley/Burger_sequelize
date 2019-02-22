@@ -12,7 +12,7 @@ Using the Sequelize ORM rather than raw MySQL queries, the app has 3 basic CRUD 
 
 * UPDATE a selected burger by clicking on the burger name button, which... * hits a /put route in Express to change its "devoured" status in the MySQL database (via Sequelize ORM) * re-routes the webpage back to the index, where the burger is now in the devoured column (via Handlebars)
 
-* CREATE a new burger using the "Add A new burger" form, which... * hits a /post route in Express to insert a new burger into the MySQL database (via Sequelize ORM) * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
+* CREATE a new burger using the "Add A New Burger" form, which... * hits a /post route in Express to insert a new burger into the MySQL database (via Sequelize ORM) * re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
 
 ## Getting Started
 
