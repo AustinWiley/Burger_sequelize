@@ -1,8 +1,11 @@
 
 # burger-sequelize
-Sequelize and Handlebars
-One Paragraph of project description goes here
-https://infinite-beyond-30054.herokuapp.com/
+A Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!
+
+Uses the Sequelize ORM rather than raw MySQL queries.
+
+Try out the deployed app in Heroku, found [here](https://infinite-beyond-30054.herokuapp.com/)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -12,23 +15,52 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+* Node.js
+* NPM
 ```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Clone the repo to your computer usingthe command line:
 
 ```
-Give the example
+git clone <repo clone url>
 ```
 
-And repeat
+Use MySQL Workbench or HeidiSQL to create a database called:
 
 ```
-until finished
+burger_sequalize_d
+```
+
+Inside the `config` folder, open up the `connection.js` file and add your MySQL localhost password:
+
+```
+  var sequelize = new Sequelize('burger_sequalize_d', 'root', '<yourPassWordHere>', {
+    host: 'localhost',
+    port: 8889,
+    dialect: 'mysql',
+    operatorsAliases: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+```
+
+Use MySQL Workbench to create a database called:
+
+```
+burger_db
+```
+
+Use MySQL Workbench to create a database called:
+
+```
+burger_db
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
