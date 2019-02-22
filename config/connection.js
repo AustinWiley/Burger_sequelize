@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 
 if (process.env.JAWSDB_URL) {
-
+console.log('JawsDB Bro')
   // var sequelize = new Sequelize(process.env.JAWSDB_URL);
-  var sequelize = new Sequelize('iz6gd16bn9rgtl97', 'i5nt37zz6f4tch7y', 'p5glsnqv1cexpkzb', {
-    host: 'jsftj8ez0cevjz8v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  var sequelize = new Sequelize('rah0l7bw3voajzgg', 'nlky5nfq0vv5qado', 'zgnibx7qpdbwoht1', {
+    host: 'ryvdxs57afyjk41z.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     port: 3306,
     dialect: 'mysql',
     operatorsAliases: false,
