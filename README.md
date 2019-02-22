@@ -8,7 +8,7 @@ Try out the deployed app in Heroku, found [here](https://infinite-beyond-30054.h
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ What things you need to install the software and how to install them
 
 A step by step series of examples that tell you how to get a development env running
 
-Clone the repo to your computer usingthe command line:
+Clone the repo to your computer using the command line:
 
 ```
 git clone git@github.com:AustinWiley/Burger_sequelize.git
