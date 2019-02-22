@@ -1,30 +1,46 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
+const Sequelize = require('sequelize');
 
-// Require mysql
-var mysql = require("mysql");
-var connection;
-// Set up our connection information
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+  // var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  var sequelize = new Sequelize('iz6gd16bn9rgtl97', 'i5nt37zz6f4tch7y', 'p5glsnqv1cexpkzb', {
+    host: 'jsftj8ez0cevjz8v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    port: 3306,
+    dialect: 'mysql',
+    operatorsAliases: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+  });
 } else {
-  connection = mysql.createConnection({
-  host: "localhost",
-  port: 8889,
-  user: "root",
-  password: "root",
-  database: "burgers_db"
-})};
 
-// Connect to the database
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+  var sequelize = new Sequelize('burger_sequalize_d', 'root', 'root', {
+    host: 'localhost',
+    port: 8889,
+    dialect: 'mysql',
+    operatorsAliases: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
+  });
+}
 
-// Export connection
-module.exports = connection;
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+// Or you can simply use a connection uri
+// const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
+
+module.exports = sequelize;

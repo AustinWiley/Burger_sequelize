@@ -1,5 +1,5 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE burger_sequalize_d;
+USE burger_sequalize_d;
 
 CREATE TABLE burgers (
   id Int( 11 ) AUTO_INCREMENT,
