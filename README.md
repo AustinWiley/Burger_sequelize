@@ -26,7 +26,7 @@ A step by step series of examples that tell you how to get a development env run
 Clone the repo to your computer usingthe command line:
 
 ```
-`git clone git@github.com:AustinWiley/Burger_sequelize.git`
+git clone git@github.com:AustinWiley/Burger_sequelize.git
 ```
 
 Use MySQL Workbench or HeidiSQL to create a database called:
@@ -51,43 +51,27 @@ Inside the `config` folder, open up the `connection.js` file and add your MySQL 
     }
 ```
 
-Use MySQL Workbench to create a database called:
+In your terminal, cd into the project folder and run:
 
 ```
-burger_db
+npm install
 ```
 
-Use MySQL Workbench to create a database called:
+Start a node server by running this in your terminal:
 
 ```
-burger_db
+node server.js
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Finally, navigating in your browser:
 
 ```
-Give an example
+localhost:8080
 ```
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+## Screenshots
+`add gif here`
 
 ## Built With
 
