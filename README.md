@@ -3,12 +3,10 @@
 ### Eat Da Burger!!!
 A Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!
 
-Uses the Sequelize ORM rather than raw MySQL queries.
-
 Try out the deployed app in Heroku, found [here](https://infinite-beyond-30054.herokuapp.com/)
 
 ## Functionality
-Using the Sequelize ORM, the app has 3 basic CRUD functions...
+Using the Sequelize ORM rather than raw MySQL queries, the app has 3 basic CRUD functions...
 
 * READ all entries from the MySQL database and display them to the DOM using Handlebars.
 
