@@ -77,7 +77,7 @@ localhost:8080
 
 
 ## Demo
-![alt text](http://url/to/img.png)
+![eat da burger](https://github.com/AustinWiley/Burger_sequelize/blob/master/public/assets/img/demo-gif.gif)
 
 
 ## Built With
