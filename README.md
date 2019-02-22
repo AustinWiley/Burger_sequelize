@@ -1,5 +1,6 @@
 
-# burger-sequelize
+# Burger-sequelize
+#### Eat Da Burger
 A Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them!
 
 Uses the Sequelize ORM rather than raw MySQL queries.
