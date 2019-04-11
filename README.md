@@ -78,6 +78,7 @@ localhost:8080
 
 
 ## Demo
+
 ![eat da burger](https://github.com/AustinWiley/Burger_sequelize/blob/master/public/assets/img/demo-gif.gif)
 
 
