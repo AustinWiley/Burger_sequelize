@@ -6,6 +6,7 @@ A Node, Express, Handlebars, and MySQL burger app that lets users input the name
 Try out the deployed app in Heroku, found [here](https://infinite-beyond-30054.herokuapp.com/)
 
 ## Functionality
+
 Using the Sequelize ORM rather than raw MySQL queries, the app has 3 basic CRUD functions...
 
 * READ all entries from the MySQL database and display them to the DOM using Handlebars.
